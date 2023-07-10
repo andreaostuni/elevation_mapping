@@ -5,8 +5,9 @@
  *      Author: Péter Fankhauser
  *	 Institute: ETH Zurich, ANYbotics
  */
+#ifndef ELEVATION_MAPPING_ELEVATION_MAP_HPP_
+#define ELEVATION_MAPPING_ELEVATION_MAP_HPP_
 
-#pragma once
 
 // Grid Map
 #include <grid_map_ros/grid_map_ros.hpp>
@@ -18,11 +19,10 @@
 // Kindr
 #include <kindr/Core>
 
-// Boost
-#include <boost/thread/recursive_mutex.hpp>
+#include <mutex>
 
 // ROS
-#include <ros/ros.h>
+#include <rclcpp/rclcpp.hpp>
 
 // Elevation Mapping
 #include "elevation_mapping/PointXYZRGBConfidenceRatio.hpp"
@@ -39,7 +39,7 @@ class ElevationMap {
   /*!
    * Constructor.
    */
-  explicit ElevationMap(ros::NodeHandle nodeHandle);
+  explicit ElevationMap(rclcpp::Node node_handle);
 
   /*!
    * Destructor.
@@ -275,6 +275,7 @@ class ElevationMap {
 
   //! ROS nodehandle.
   ros::NodeHandle nodeHandle_;
+  // use an interface with the interfaces for its necessities
 
   //! Raw elevation map as grid map.
   grid_map::GridMap rawMap_;
@@ -335,3 +336,5 @@ class ElevationMap {
 };
 
 }  // namespace elevation_mapping
+
+#endif  // ELEVATION_MAPPING_ELEVATIONMAP_HPP_

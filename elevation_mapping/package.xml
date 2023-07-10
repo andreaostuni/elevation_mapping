@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
-<package format="2">
+<package format="3">
   <name>elevation_mapping</name>
   <version>0.7.13</version>
   <description>Generates an elevation map from distance measurements and robot pose information.</description>
+  <maintainer email="andrea.ostuni@polito.it">Andrea Ostuni</maintainer>
   <maintainer email="mwulf@anybotics.com">Maximilian Wulf</maintainer>
   <maintainer email="mgaertner@anybotics.com">Magnus Gaertner</maintainer>
   <license>BSD</license>
@@ -10,11 +11,11 @@
   <url type="bugtracker">http://github.com/anybotics/elevation_mapping/issues</url>
   <author email="pfankhauser@anybotics.com">Péter Fankhauser</author>
 
-  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
 
-<!--   <build_depend>cmake_clang_tools</build_depend> -->
+  <!--   <build_depend>cmake_clang_tools</build_depend> -->
 
-  <depend>boost</depend>
+  <!-- <depend>boost</depend>
   <depend>eigen</depend>
   <depend>eigen_conversions</depend>
   <depend>grid_map_core</depend>
@@ -30,12 +31,12 @@
   <depend>sensor_msgs</depend>
   <depend>std_msgs</depend>
   <depend>tf</depend>
-  <depend>tf_conversions</depend>
+  <depend>tf_conversions</depend> -->
 
-<!--   <test_depend>cmake_code_coverage</test_depend> -->
-  <test_depend>grid_map_filters</test_depend>
+  <!--   <test_depend>cmake_code_coverage</test_depend> -->
+  <!-- <test_depend>grid_map_filters</test_depend>
   <test_depend>gtest</test_depend>
   <test_depend>roslaunch</test_depend>
-  <test_depend>rostest</test_depend>
+  <test_depend>rostest</test_depend> -->
 
 </package>

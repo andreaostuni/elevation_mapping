@@ -6,7 +6,8 @@
  *	 Institute: ETH Zurich, ANYbotics
  */
 
-#pragma once
+#ifndef ELEVATION_MAPPING_ELEVATION_MAPPING_INCLUDE_ELEVATION_MAPPING_ROBOTMOTIONMAPUPDATER_HPP_
+#define ELEVATION_MAPPING_ELEVATION_MAPPING_INCLUDE_ELEVATION_MAPPING_ROBOTMOTIONMAPUPDATER_HPP_
 
 // Elevation Mapping
 #include "elevation_mapping/ElevationMap.hpp"
@@ -18,7 +19,7 @@
 #include <kindr/Core>
 
 // ROS
-#include <ros/ros.h>
+#include <rclcpp/rclcpp.hpp>
 
 namespace elevation_mapping {
 
@@ -81,7 +82,7 @@ class RobotMotionMapUpdater {
   bool computeRelativeCovariance(const Pose& robotPose, const ReducedCovariance& reducedCovariance, ReducedCovariance& relativeCovariance);
 
   //! ROS nodehandle.
-  ros::NodeHandle nodeHandle_;
+  ros::NodeHandle nodeHandle_; // an interface to ros time, parameter, logging, etc.
 
   //! Time of the previous update.
   ros::Time previousUpdateTime_;
@@ -97,3 +98,5 @@ class RobotMotionMapUpdater {
 };
 
 }  // namespace elevation_mapping
+
+#endif /* ELEVATION_MAPPING_ELEVATION_MAPPING_INCLUDE_ELEVATION_MAPPING_ROBOTMOTIONMAPUPDATER_HPP_ */

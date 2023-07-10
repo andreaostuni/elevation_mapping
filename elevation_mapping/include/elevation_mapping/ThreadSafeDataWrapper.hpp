@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ELEVATION_MAPPING_THREAD_SAFE_DATA_WRAPPER_HPP_
+#define ELEVATION_MAPPING_THREAD_SAFE_DATA_WRAPPER_HPP_
 
 #include <mutex>
 #include <thread>
@@ -42,3 +43,5 @@ class ThreadSafeDataWrapper {
 };
 
 }  // namespace elevation_mapping
+
+#endif  // ELEVATION_MAPPING_THREAD_SAFE_DATA_WRAPPER_HPP_

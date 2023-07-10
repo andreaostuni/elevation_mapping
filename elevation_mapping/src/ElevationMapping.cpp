@@ -720,7 +720,7 @@ bool ElevationMapping::maskedReplaceServiceCallback(grid_map_msgs::SetGridMap::R
 bool ElevationMapping::saveMapServiceCallback(grid_map_msgs::ProcessFile::Request& request,
                                               grid_map_msgs::ProcessFile::Response& response) {
   ROS_INFO("Saving map to file.");
-  boost::recursive_mutex::scoped_lock scopedLock(map_.getFusedDataMutex());
+  boost::recursive_mutex::scoped_lock scopedLock(map_.getFusedDataMutex()); //Replace with std::scoped_lock when switching to C++17
   map_.fuseAll();
   std::string topic = nodeHandle_.getNamespace() + "/elevation_map";
   if (!request.topic_name.empty()) {

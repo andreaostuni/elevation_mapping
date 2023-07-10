@@ -1,3 +1,4 @@
 # Noiseless ground truth measurements
 sensor_processor:
-  type: perfect
+  ros__parameters:
+    type: perfect 

@@ -6,7 +6,8 @@
  *   Institute: ETH Zurich, ANYbotics
  */
 
-#pragma once
+#ifndef ELEVATION_MAPPING_WEIGHTED_EMPIRICAL_CUMULATIVE_DISTRIBUTION_FUNCTION_HPP_
+#define ELEVATION_MAPPING_WEIGHTED_EMPIRICAL_CUMULATIVE_DISTRIBUTION_FUNCTION_HPP_
 
 #include <iostream>
 #include <map>
@@ -137,3 +138,5 @@ class WeightedEmpiricalCumulativeDistributionFunction {
 };
 
 } /* namespace elevation_mapping */
+
+#endif /* ELEVATION_MAPPING_WEIGHTED_EMPIRICAL_CUMULATIVE_DISTRIBUTION_FUNCTION_HPP_ */

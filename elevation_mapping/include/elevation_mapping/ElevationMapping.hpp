@@ -1,5 +1,5 @@
 /*
- * ElevationMap.hpp
+ * ElevationMapping.hpp
  *
  *  Created on: Nov 12, 2013
  *      Author: Péter Fankhauser
@@ -9,26 +9,26 @@
 #pragma once
 
 // Grid Map
-#include <grid_map_msgs/GetGridMap.h>
-#include <grid_map_msgs/ProcessFile.h>
-#include <grid_map_msgs/SetGridMap.h>
+#include <grid_map_msgs/msg/get_grid_map.hpp>
+#include <grid_map_msgs/msg/process_file.hpp>
+#include <grid_map_msgs/msg/set_grid_map.hpp>
 
 // ROS
-#include <geometry_msgs/PoseWithCovarianceStamped.h>
+#include <geometry_msgs/msg/pose_with_covariance_stamped.hpp>
 #include <message_filters/cache.h>
 #include <message_filters/subscriber.h>
-#include <ros/ros.h>
-#include <sensor_msgs/PointCloud2.h>
-#include <std_srvs/Empty.h>
-#include <std_srvs/Trigger.h>
-#include <tf/transform_listener.h>
+#include <rclcpp/rclcpp.hpp>
+#include <sensor_msgs/msg/point_cloud2.hpp>
+#include <std_srvs/srv/empty.hpp>
+#include <std_srvs/srv/trigger.h>
+#include <tf2_ros/transform_listener.h>
 
 // Eigen
 #include <Eigen/Core>
 #include <Eigen/Geometry>
 
 // Boost
-#include <boost/thread.hpp>
+#include <thread>
 
 // Elevation Mapping
 #include "elevation_mapping/ElevationMap.hpp"
@@ -55,6 +55,7 @@ class ElevationMapping {
    * @param nodeHandle the ROS node handle.
    */
   explicit ElevationMapping(ros::NodeHandle& nodeHandle);
+  // explicit ElevationMapping(rclcpp::Node::SharedPtr nodeHandle); but maybe a lifecycle node is better?
 
   /*!
    * Destructor.
@@ -389,7 +390,7 @@ class ElevationMapping {
   ros::CallbackQueue visibilityCleanupQueue_;
 
   //! Callback thread for raytracing cleanup.
-  boost::thread visibilityCleanupThread_;
+  std::thread visibilityCleanupThread_;
 
   //! Becomes true when corresponding poses and point clouds can be found
   bool receivedFirstMatchingPointcloudAndPose_;

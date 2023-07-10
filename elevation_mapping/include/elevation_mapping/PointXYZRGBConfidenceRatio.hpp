@@ -9,7 +9,8 @@
  *   Adapted from https://github.com/PointCloudLibrary/pcl/blob/master/common/include/pcl/impl/point_types.hpp
  */
 
-#pragma once
+#ifndef ELEVATION_MAPPING_POINTXYZRGBCONFIDENCERATIO_HPP_
+#define ELEVATION_MAPPING_POINTXYZRGBCONFIDENCERATIO_HPP_
 
 #include <pcl/pcl_macros.h>
 #include <pcl/point_cloud.h>
@@ -92,3 +93,5 @@ POINT_CLOUD_REGISTER_POINT_STRUCT(pcl::_PointXYZRGBConfidenceRatio,  // NOLINT(m
                                   (float, confidence_ratio, confidence_ratio))  // NOLINT
 
 POINT_CLOUD_REGISTER_POINT_WRAPPER(pcl::PointXYZRGBConfidenceRatio, pcl::_PointXYZRGBConfidenceRatio)
+
+#endif  // ELEVATION_MAPPING_POINTXYZRGBCONFIDENCERATIO_HPP_
